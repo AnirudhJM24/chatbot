@@ -1,0 +1,28 @@
+
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi", "Hey", "Is anyone there?", "Hello", "Hey! how are you?","Hi how are you doing?","Good morning","Good Afternoon", "What's up"],
+     "responses": ["Hello", "Hi", "Hi there"]
+    },
+    {"tag": "goodbye",
+     "patterns": ["Bye", "See you later", "Goodbye"],
+     "responses": ["See you later", "Have a nice day", "Bye! Come back again"]
+    },
+    {"tag": "thanks",
+     "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks for the help"],
+     "responses": ["Happy to help!", "Any time!", "My pleasure", "You're most welcome!"]
+    },
+    {"tag": "about",
+     "patterns": ["Who are you?", "What are you?", "What are you","Where are you from?"],
+     "responses": ["I am your bot assistant", "I am a chatbot :)"]
+    },
+    {"tag": "name",
+    "patterns": ["what is your name", "what should I call you", "whats your name?","how can i call you", "may i please know your name?", "Can you please tell me your name", "May i know your good name?"],
+    "responses": ["Say my Name.. Say it", "You can call me saul", "Just call me your imaginary friend"]
+    },
+    {"tag": "help",
+    "patterns": ["Could you help me?", "Can you do me a favor", " Hey I need help", "Hi can you do something for me", "Could you please help me", "Can you please help me", "Hey can you do this for me?"],
+    "responses": ["sure I can", "What is it this time?", "Yep, Sure!", "Shoot"]
+}
+]
+}
