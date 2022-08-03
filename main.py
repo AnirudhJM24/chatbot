@@ -8,7 +8,7 @@ import pickle
 from keras.preprocessing.text import Tokenizer
 from keras_preprocessing.sequence import pad_sequences
 import random
-
+from sys import exit
 class chatbot:
 
     with open('intents.json') as f:
@@ -36,9 +36,11 @@ class chatbot:
         try:
             self.aud_text = speech.recognize_google(aud)
             print("user ------>", self.aud_text)
+            if self.aud_text == 'quit':
+                exit()
             self.response()
         except :
-            print('user----> Sorry could not understand')
+            print('bot----> Sorry could not understand')
     def response(self):
         key = self.inference()
         for i in self.database['intents']:
@@ -49,8 +51,9 @@ class chatbot:
     def inference(self):
         sequence = self.tokenizer.texts_to_sequences([self.aud_text])
         test = pad_sequences(sequence, maxlen=20)
-        print(self.lblencoder.inverse_transform([np.argmax(self.model.predict(test))]))
+        #print(self.lblencoder.inverse_transform([np.argmax(self.model.predict(test))]))
         return self.lblencoder.inverse_transform([np.argmax(self.model.predict(test))])
+    
 
 
 if __name__ == '__main__':
